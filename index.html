@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISS Tracker - Live Mission Control</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/ISSTracker/assets/index-B1LQHCD1.js"></script>
+    <link rel="stylesheet" crossorigin href="/ISSTracker/assets/index-9DavRlBr.css">
+  </head>
+  <body>
+    <div class="dashboard-grid">
+      <!-- HEADER -->
+      <header class="header glass">
+        <div class="logo">🛰️ <span>ISS TRACKER Live</span></div>
+        <div class="mission-clock" id="clock">00:00:00 UTC</div>
+      </header>
+
+      <!-- MAP PANEL -->
+      <main class="map-panel glass">
+        <div id="map"></div>
+        <div class="map-overlay">
+          <h2>Current Trajectory</h2>
+          <div class="coords"><span id="lat">--</span>, <span id="lon">--</span></div>
+        </div>
+      </main>
+
+      <!-- STATS PANEL -->
+      <aside class="stats-panel glass">
+        <h2>Orbital Parameters</h2>
+        <div class="stat-box">
+          <label>Altitude</label>
+          <div class="value"><span id="alt">--</span> km</div>
+        </div>
+        <div class="stat-box">
+          <label>Velocity</label>
+          <div class="value"><span id="vel">--</span> km/h</div>
+        </div>
+        <div class="stat-box">
+          <label>Orbital Period</label>
+          <div class="value">~90 mins</div>
+        </div>
+        <div class="stat-box">
+          <label>Visibility</label>
+          <div class="value highlight" id="vis">--</div>
+        </div>
+      </aside>
+
+      <!-- CREW PANEL -->
+      <section class="crew-panel glass">
+        <h2>Current Crew Manifest <span id="crew-count" class="badge">0</span></h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Astronaut Name</th>
+              <th>Spacecraft</th>
+              <th>Nationality</th>
+            </tr>
+          </thead>
+          <tbody id="crew-list">
+            <tr><td colspan="3" class="loading">Establishing data link...</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>
